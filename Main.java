@@ -60,6 +60,11 @@ public class Main {
                 m3.setAccessible(true);    
                 m3.invoke(a2);
                 
+                ATM a4 = (ATM)constructor.newInstance();
+                Method m4 = cls.getDeclaredMethod("displayMainMenu(", null);    
+                m4.setAccessible(true);    
+                m4.invoke(a4);
+
                 //InvocationTargetExceptionDemo invoked = new InvocationTargetExceptionDemo(); 
                 ATM a1 = (ATM)constructor.newInstance();
                 Method m2 = cls.getDeclaredMethod("performTransactions", null);    
