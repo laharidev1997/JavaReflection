@@ -1,3 +1,5 @@
+//Lahari Devaraju
+//2092487
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -61,13 +63,6 @@ public class Main {
                 Method m2 = cls.getDeclaredMethod("performTransactions", null);    
                 m2.setAccessible(true);    
                 m2.invoke(a1);
-                
-                
-
-                
-                Field f1 = ATM.class.getDeclaredField("BALANCE_INQUIRY");
-                f1.setAccessible(true);
-                
                 }
                 catch(Exception e)
                 {
