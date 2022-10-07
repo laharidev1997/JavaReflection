@@ -15,10 +15,11 @@ public class Main {
                 //Getting name of the java file
                 System.out.println("Getting name of the class: " +cls.getName());
                 System.out.println();
-                //Constructors
+                //Constructor obtained
                 Constructor constructor = cls.getConstructor();
                 System.out.println("The name of constructor is "+ constructor.getName());
                 System.out.println();
+                //Getting private and public fields
                 System.out.println("The public methods of class are : ");
                 String field = Arrays.toString(cls.getDeclaredFields());
                 String[] f = field.split(",");
@@ -28,6 +29,7 @@ public class Main {
                         System.out.println(fi);
                 }
                 System.out.println();
+                //Getting privatre and public methods
                 System.out.println("Declared methods both private and public methods : " );
                 String methods = Arrays.toString(cls.getDeclaredMethods());
                 String[] methods_Array = methods.split(",");
@@ -36,7 +38,7 @@ public class Main {
                         System.out.println(a);
                 }
                 System.out.println();
-                
+                //Change the accessibility of Private fields and invoke.
                 Field fg = cls.getDeclaredField("BALANCE_INQUIRY");
                 Field fg1 = cls.getDeclaredField("WITHDRAWAL");
                 Field fg2 = cls.getDeclaredField("currentAccountNumber");
@@ -47,7 +49,7 @@ public class Main {
                 System.out.println("Accessing the value of the " +fg + " is " +fg.get(cls));
                 System.out.println("Accessing the value of the " +fg1 + " is " +fg1.get(cls));
                 // /System.out.println(fg2.get(cls));
-
+                //Create new instances and invoke at least 2 methods.
                 ATM a = (ATM)constructor.newInstance();
                 Method m1 =cls.getDeclaredMethod("run");    
                 m1.setAccessible(true);    
