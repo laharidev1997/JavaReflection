@@ -16,7 +16,7 @@ public class Main {
                 //Constructors
                 Constructor constructor = cls.getConstructor();
                 System.out.println("The name of constructor is "+ constructor.getName());
-
+                System.out.println();
                 System.out.println("The public methods of class are : ");
                 String field = Arrays.toString(cls.getDeclaredFields());
                 String[] f = field.split(",");
@@ -27,14 +27,13 @@ public class Main {
                 }
                 System.out.println();
                 System.out.println("Declared methods both private and public methods : " );
-
                 String methods = Arrays.toString(cls.getDeclaredMethods());
                 String[] methods_Array = methods.split(",");
                 for(String a : methods_Array)
                 {
                         System.out.println(a);
                 }
-
+                System.out.println();
                 
                 Field fg = cls.getDeclaredField("BALANCE_INQUIRY");
                 Field fg1 = cls.getDeclaredField("WITHDRAWAL");
@@ -43,8 +42,8 @@ public class Main {
                 fg.setAccessible(true);
                 fg1.setAccessible(true);
                 fg2.setAccessible(true);
-                System.out.println(fg.get(cls));
-                System.out.println(fg1.get(cls));
+                System.out.println("Accessing the value of the " +fg + " is " +fg.get(cls));
+                System.out.println("Accessing the value of the " +fg1 + " is " +fg1.get(cls));
                 // /System.out.println(fg2.get(cls));
 
                 ATM a = (ATM)constructor.newInstance();
